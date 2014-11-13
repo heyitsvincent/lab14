@@ -33,21 +33,23 @@ class MyApp:
 		# "Bind" an action to the first button												
 		self.button1.bind("<Button-1>", self.button1Click)
 		 
-		  
+		self.button2.bind("<Button-1>", self.button2Click)
+		
 		# This creates the drawpad - no need to change this 
 		drawpad.pack()
 		
-
+		x1,y1,x2,y2 = drawpad.coords(oval)
+		if x1 > 0 :
 		
-	def button1Click(self, event):   
-		# Make the oval move to the left!
-                # "global" makes sure that we can access our oval and our drawpad
-                # Add in boundary detection
+		
+	def button2Click(self,event):   
 		global oval
 		global drawpad
 		global drawpadwidth
 		global drawpadheight
-	
+	        x1, y1,x2,y2 = srawpad.coords(oval)
+	        if x2 < 480:
+	               drawpad.move(oval,10,0)
 	# Add the button2Click method
 		
 myapp = MyApp(root)
